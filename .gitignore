@@ -1,0 +1,6 @@
+config/__pycache__
+lib/__pycache__
+shoppingcart/__pycache__
+tests/__pycache__
+shoppingcart/__init__.pyc
+tests/__init__.pyc
