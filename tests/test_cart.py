@@ -31,6 +31,7 @@ class Testcart(unittest.TestCase):
         cart = ShoppingCart('db')
         cart.add_item("apple", 1)
         cart.add_item("kiwi", 2)
+        cart.add_item("pineapple", 9)
 
         receipt = cart.print_receipt()
         self.assertEqual(str(receipt[2]), 'Total - €3.24')

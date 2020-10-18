@@ -1,0 +1,21 @@
+{ "item_prices":
+    {"items": [
+      { "code": "apple",
+        "price": 1.0,
+        "currency": "EUR"
+      },
+      { "code": "kiwi",
+        "price": 1.12,
+        "currency": "EUR"
+      },
+      { "code": "orange",
+        "price": 2,
+        "currency": "EUR"
+      },
+      { "code": "banana",
+        "price": 0.50,
+        "currency": "EUR"
+      }
+    ]
+  }
+}
