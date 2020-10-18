@@ -3,7 +3,7 @@ from pathlib import Path
 
 from config.database import Database
 
-
+#Helper method to fetch price from the source
 def get_price(source: str, product_code: str) -> dict:
   record = None
   if source == "db":

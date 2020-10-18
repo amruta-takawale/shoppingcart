@@ -17,24 +17,32 @@ class Testcart(unittest.TestCase):
         receipt = cart.print_receipt()
         self.assertEqual(receipt[0], "apple - 1 - €1.00")
 
-    # #Test item is not present in the receipt
-    # def test_skip_missing_price_item(self):
-    #     print("Unit Test: item is not present in the receipt")
-    #     cart = ShoppingCart('db')
-    #     cart.add_item("apple1", 1)
+    def test_returns_USD_currency(self):
+        cart = ShoppingCart('db', 'USD')
+        cart.add_item("apple", 1)
 
-    #     receipt = cart.print_receipt()
-    #     self.assertNotIn(receipt, "apple1 - 1 - €1.00")
+        receipt = cart.print_receipt()
+        self.assertEqual(receipt[0], "apple - 1 - US$1.16")
 
     #Total is present
     def test_item_total_is_present(self):
-        cart = ShoppingCart('db')
+        cart = ShoppingCart('json')
         cart.add_item("apple", 1)
         cart.add_item("kiwi", 2)
         cart.add_item("pineapple", 9)
 
         receipt = cart.print_receipt()
         self.assertEqual(str(receipt[2]), 'Total - €3.24')
+
+    #Total is present in UDS
+    def test_item_total_is_present_in_USD(self):
+        cart = ShoppingCart('db', 'USD')
+        cart.add_item("apple", 1)
+        cart.add_item("kiwi", 2)
+        cart.add_item("pineapple", 9)
+
+        receipt = cart.print_receipt()
+        self.assertEqual(str(receipt[2]), 'Total - US$3.77')
 
     def test_add_item_with_multiple_quantity(self):
         cart = ShoppingCart('db')
